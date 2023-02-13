@@ -11,7 +11,7 @@ module.exports = {
       accounts: [process.env.privateKey],
     },
     fantom: {
-      url: `https://rpc.ftm.tools/`,
+      url: `https://rpc3.fantom.network`,
       accounts: [process.env.privateKey],
     },
   },

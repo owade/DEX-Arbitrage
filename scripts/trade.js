@@ -77,7 +77,8 @@ const dualTrade = async (router1,router2,baseToken,token2,amount) => {
   try {
     inTrade = true;
     console.log('> Making dualTrade...');
-    const tx = await arb.connect(owner).dualDexTrade(router1, router2, baseToken, token2, amount); //{ gasPrice: 1000000000003, gasLimit: 500000 }
+    console.log("Params are...",router1, router2, baseToken, token2, amount);
+    const tx = await arb.connect(owner).dualDexTrade(router1, router2, baseToken, token2, amount,{ gasPrice: 1000000000003, gasLimit: 500000 }); //{ gasPrice: 1000000000003, gasLimit: 500000 }
     await tx.wait();
     inTrade = false;
     await lookForDualTrade();
